@@ -1,5 +1,7 @@
 package com.dengshaolin.db.impl;
 
+import java.util.List;
+
 import com.dengshaolin.db.PersonDao;
 import com.dengshaolin.db.model.Person;
 import com.dengshaolin.db.utils.HibernateUtil;
@@ -24,5 +26,10 @@ public class PersonDaoImpl extends BaseDao<Person> implements PersonDao{
 	public void delete(int personId) {
 		// TODO Auto-generated method stub
 		super.remove(Person.class, personId);
+	}
+
+	@Override
+	public List<Person> list() {
+		return super.list(Person.class);
 	}
 }
